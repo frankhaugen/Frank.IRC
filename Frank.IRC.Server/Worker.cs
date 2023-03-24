@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Options;
+
 namespace Frank.IRC.Server;
 
 public class Worker : BackgroundService
