@@ -1,14 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk.Worker">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>dotnet-Frank.IRC.Server-03a081dd-30ca-4f29-9bc9-9c0c31dd489d</UserSecretsId>
+    <Description>Built on top of Frank.BerockSlim.Server, this is a simple IRC server that is meant to be a fully functional IRC server that can be used for testing IRC clients and bots. It is not meant to be a production IRC server... yet.</Description>
+    <PackageTags>irc, server, library, frank, bedrock, slim</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0-preview.1.23110.8" />
+      <PackageReference Include="Frank.BedrockSlim.Server" Version="0.1.0" />
   </ItemGroup>
 
   <ItemGroup>

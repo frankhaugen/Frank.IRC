@@ -1,33 +1,27 @@
-﻿using Frank.IRC.Networking;
-using Frank.IRC.Networking.Sockets;
+﻿using Frank.BedrockSlim.Server;
+
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Frank.IRC.Server;
 
+public static class HostBuilderExtensions
+{
+    public static IWebHostBuilder UseIrcServer(this IWebHostBuilder builder)
+    {
+        builder.UseTcpConnectionHandler<IrcMessageProcessor>(6667);
+        builder.ConfigureServices(services =>
+        {
+            services.AddIrcServer();
+        });
+        return builder;
+    }
+}
+
 public static class ServiceCollectionExtensions
 {
-    internal static IServiceCollection AddSocketServer(this IServiceCollection services)
+    public static IServiceCollection AddIrcServer(this IServiceCollection services)
     {
-        services.AddHostedService<SocketListener>();
-        return services;
-    }
-    
-    internal static IServiceCollection AddSocketMessageQueue(this IServiceCollection services)
-    {
-        services.AddSingleton<ISocketMessageQueue, SocketMessageQueue>();
-        services.AddHostedService<SocketMessageQueueProcessor>();
-        return services;
-    }
-    
-    internal static IServiceCollection AddSocketMessageHandler(this IServiceCollection services)
-    {
-        services.AddSingleton<ISocketMessageHandler, GenericHandler>();
-        return services;
-    }
-    
-    internal static IServiceCollection AddSocketMessageHandler<T>(this IServiceCollection services)
-        where T : class, ISocketMessageHandler
-    {
-        services.AddSingleton<ISocketMessageHandler, T>();
         return services;
     }
 }
