@@ -7,6 +7,10 @@
 
   <ItemGroup>
       <PackageReference Include="Frank.BedrockSlim.Server" Version="1.1.0" />
+      <PackageReference Include="Frank.CronJobs" Version="1.1.0" />
+      <PackageReference Include="Frank.DataStorage.Json" Version="1.2.0" />
+      <PackageReference Include="Frank.Mapping" Version="1.0.0" />
+      <PackageReference Include="Frank.PulseFlow" Version="1.7.0" />
   </ItemGroup>
 
   <ItemGroup>
