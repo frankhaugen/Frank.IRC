@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/SolutionItems/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="LICENSE" />
+    <File Path="nuget.config" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Frank.IRC.Client/Frank.IRC.Client.csproj" />
+  <Project Path="Frank.IRC.Server/Frank.IRC.Server.csproj" />
+  <Project Path="Frank.IRC.Tests/Frank.IRC.Tests.csproj" />
+  <Project Path="Frank.IRC/Frank.IRC.csproj" />
+</Solution>
